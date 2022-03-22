@@ -10,7 +10,7 @@ import { EmptyPropsWithChildren } from "../types/react";
 const rollbarConfig: Configuration | undefined = undefined;
 
 function useRollbar(): Rollbar | undefined {
-  return rollbarConfig == undefined ? originalUseRollbar() : undefined;
+  return rollbarConfig == undefined ? undefined : originalUseRollbar();
 }
 
 function RollbarProvider({ children }: EmptyPropsWithChildren) {
