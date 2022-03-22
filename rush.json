@@ -396,6 +396,10 @@
     {
       "packageName": "@replaceme/client",
       "projectFolder": "apps/client"
+    },
+    {
+      "packageName": "@replaceme/api",
+      "projectFolder": "lib/api"
     }
     // {
     //   /**

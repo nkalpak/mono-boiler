@@ -1,0 +1,22 @@
+{
+  "name": "@replaceme/api",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "openapi-generate": "openapi-generator-cli generate -g typescript-axios -i ./node_modules/@replaceme/server/src/api/spec.json -o ./src --additional-properties=enumPropertyNaming=PascalCase",
+    "build": "yarn openapi-generate && tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@replaceme/server": "^0.0.1",
+    "@apidevtools/swagger-cli": "^4.0.4",
+    "@openapitools/openapi-generator-cli": "^2.2.5",
+    "@types/node": "^16.10.5",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.2.4",
+    "axios": "^0.26.1"
+  }
+}
