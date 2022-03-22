@@ -3,7 +3,7 @@ import { DocumentBuilder, OpenAPIObject, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import * as fs from 'fs';
 
-async function bootstrap() {
+async function generateOpenApi() {
   const app = await NestFactory.create(AppModule);
 
   const config = new DocumentBuilder().setTitle('@replaceme').build();
@@ -12,7 +12,7 @@ async function bootstrap() {
 
   await app.close();
 }
-bootstrap();
+generateOpenApi();
 
 function openApiGenerate(document: OpenAPIObject) {
   fs.writeFileSync('src/api/spec.json', JSON.stringify(document));
