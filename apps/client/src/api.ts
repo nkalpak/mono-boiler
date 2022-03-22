@@ -1,8 +1,8 @@
 import { DefaultApiFp } from "@replaceme/api";
+import { config } from "./utils/config";
 
 const api = DefaultApiFp({
-  // TODO: Make a separate config file
-  basePath: import.meta.env.VITE_BACKEND_URL as string,
+  basePath: config("VITE_BACKEND_URL"),
   isJsonMime: (mime: string) => {
     const jsonMime = new RegExp(
       "^(application/json|[^;/ \t]+/[^;/ \t]+[+]json)[ \t]*(;.*)?$",

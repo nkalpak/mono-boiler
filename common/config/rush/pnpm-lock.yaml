@@ -6717,7 +6717,7 @@ packages:
     dev: false
 
   file:projects/client.tgz:
-    resolution: {integrity: sha512-naH+ZPfvuBh37kdHhil1baUejnI760EHyqb2gwL4KkMf9DsaEG0wcAVcDDY7fPN3y5tyvjh1+x8ctCsW9J2y8Q==, tarball: file:projects/client.tgz}
+    resolution: {integrity: sha512-6VotW1TfTlIm1mT5ESqYqy8tUlAtfJ1DH7iUcrCmrfZcExoRcNGmgX3V+BjFMlRLX5r+BT9Gn7REDuFdA3ihJQ==, tarball: file:projects/client.tgz}
     name: '@rush-temp/client'
     version: 0.0.0
     dependencies:
@@ -6728,6 +6728,7 @@ packages:
       react-dom: 17.0.2_react@17.0.2
       typescript: 4.6.2
       vite: 2.8.6
+      zod: 3.14.2
     transitivePeerDependencies:
       - less
       - sass
