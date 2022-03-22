@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { logger } from "./logger";
 
 type ConfigSchemaType = z.infer<typeof ConfigSchema>;
 const ConfigSchema = z.object({
@@ -16,8 +17,14 @@ function config<TKey extends keyof ConfigSchemaType>(key?: TKey) {
     return key ? configCache[key] : configCache;
   }
 
-  configCache = ConfigSchema.parse(import.meta.env);
-  return key ? configCache[key] : configCache;
+  const result = ConfigSchema.safeParse(import.meta.env);
+
+  if (!result.success) {
+    logger.error(result.error.issues);
+    throw new Error(result.error.message);
+  }
+
+  return key ? result.data[key] : result.data;
 }
 
 config();
