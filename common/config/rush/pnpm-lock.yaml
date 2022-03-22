@@ -12,6 +12,7 @@ specifiers:
   '@nestjs/testing': ^8.0.0
   '@nestjs/typeorm': ^8.0.3
   '@openapitools/openapi-generator-cli': ^2.2.5
+  '@rollbar/react': ^0.11.0
   '@rush-temp/api': file:./projects/api.tgz
   '@rush-temp/client': file:./projects/client.tgz
   '@rush-temp/server': file:./projects/server.tgz
@@ -33,10 +34,12 @@ specifiers:
   pg: ^8.7.3
   pino: ^7.9.1
   prettier: ^2.3.2
+  prop-types: ^15.8.1
   react: ^17.0.2
   react-dom: ^17.0.2
   reflect-metadata: ^0.1.13
   rimraf: ^3.0.2
+  rollbar: ^2.24.1
   rxjs: ^7.2.0
   source-map-support: ^0.5.20
   supertest: ^6.1.3
@@ -61,6 +64,7 @@ dependencies:
   '@nestjs/testing': 8.4.2_94bcbca36a3e7f37e557481eaac93bd6
   '@nestjs/typeorm': 8.0.3_c3b8e069144beb027ec7310a59704eb3
   '@openapitools/openapi-generator-cli': 2.4.26_9e87011554a0f3beeddfe9015705dcb0
+  '@rollbar/react': 0.11.0_c4eb0ea19cbe8e1ccac4b2964e606e3c
   '@rush-temp/api': file:projects/api.tgz_9e87011554a0f3beeddfe9015705dcb0
   '@rush-temp/client': file:projects/client.tgz
   '@rush-temp/server': file:projects/server.tgz
@@ -82,10 +86,12 @@ dependencies:
   pg: 8.7.3
   pino: 7.9.1
   prettier: 2.6.0
+  prop-types: 15.8.1
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   reflect-metadata: 0.1.13
   rimraf: 3.0.2
+  rollbar: 2.24.1
   rxjs: 7.5.5
   source-map-support: 0.5.21
   supertest: 6.2.2
@@ -1292,6 +1298,19 @@ packages:
       - encoding
     dev: false
 
+  /@rollbar/react/0.11.0_c4eb0ea19cbe8e1ccac4b2964e606e3c:
+    resolution: {integrity: sha512-Ql9UmQGmhTF8Jse7pkP5rl/gUA64EJ795DW7bAEUt6mlN/6FxkhCqC+PCwTcHgIlZPY/707Iq7cvdqJc59eYJQ==}
+    peerDependencies:
+      prop-types: ^15.7.2
+      react: ^16.0.0-0 || ^17.0.0-0
+      rollbar: ^2.21.1
+    dependencies:
+      prop-types: 15.8.1
+      react: 17.0.2
+      rollbar: 2.24.1
+      tiny-invariant: 1.2.0
+    dev: false
+
   /@rollup/pluginutils/4.2.0:
     resolution: {integrity: sha512-2WUyJNRkyH5p487pGnn4tWAsxhEFKN/pT8CMgHshd5H+IXkOnKvKZwsz5ZWz+YCXkleZRAU5kwbfgF8CPfDRqA==}
     engines: {node: '>= 8.0.0'}
@@ -2099,6 +2118,10 @@ packages:
     resolution: {integrity: sha1-5QNHYR1+aQlDIIu9r+vLwvuGbUY=}
     dev: false
 
+  /async/1.2.1:
+    resolution: {integrity: sha1-pIFqF81f9RbfosdpikUzabl5DeA=}
+    dev: false
+
   /asynckit/0.4.0:
     resolution: {integrity: sha1-x57Zf380y48robyXkLzDZkdLS3k=}
     dev: false
@@ -2574,6 +2597,10 @@ packages:
     resolution: {integrity: sha512-9vAdYbHj6x2fLKC4+oPH0kFzY/orMZyG2Aj+kNylHxKGJ/Ed4dpNyAQYwJOdqO4zdM7XpVHmyejQDcQHrnuXbw==}
     dev: false
 
+  /console-polyfill/0.3.0:
+    resolution: {integrity: sha512-w+JSDZS7XML43Xnwo2x5O5vxB0ID7T5BdqDtyqT6uiCAX2kZAgcWxNaGqT97tZfSHzfOcvrfsDAodKcJ3UvnXQ==}
+    dev: false
+
   /console.table/0.10.0:
     resolution: {integrity: sha1-CRcCVYiHW+/XDPLv9L7yxuLXXQQ=}
     engines: {node: '> 0.10'}
@@ -2706,6 +2733,13 @@ packages:
     dependencies:
       ms: 2.1.2
     dev: false
+
+  /decache/3.1.0:
+    resolution: {integrity: sha1-T1A2+9ZYH8yXI3rDlUokS5U2wto=}
+    dependencies:
+      find: 0.2.9
+    dev: false
+    optional: true
 
   /decamelize/1.2.0:
     resolution: {integrity: sha1-9lNNFRSCabIDUue+4m9QH5oZEpA=}
@@ -2870,6 +2904,12 @@ packages:
     resolution: {integrity: sha512-7dFHNmqeFSEt2ZBsCriorKnn3Z2pj+fd9kmI6QoWw4//DL+icEBfc0U7qJCisqrTsKTjw4fNFy2pW9OqStD84g==}
     dependencies:
       is-arrayish: 0.2.1
+    dev: false
+
+  /error-stack-parser/2.0.7:
+    resolution: {integrity: sha512-chLOW0ZGRf4s8raLrDxa5sdkvPec5YdvwbFnqJme4rk0rFajP8mPtrDL1+I+CwrQDCjswDA5sREX7jYQDQs9vA==}
+    dependencies:
+      stackframe: 1.2.1
     dev: false
 
   /es-module-lexer/0.9.3:
@@ -3445,6 +3485,13 @@ packages:
       path-exists: 4.0.0
     dev: false
 
+  /find/0.2.9:
+    resolution: {integrity: sha1-S3Px/55WrZG3bnFkB/5f/mVUu4w=}
+    dependencies:
+      traverse-chain: 0.1.0
+    dev: false
+    optional: true
+
   /flat-cache/3.0.4:
     resolution: {integrity: sha512-dm9s5Pw7Jc0GvMYbshN6zchCA9RgQlzzEZX3vylR9IqFfS8XciblUXOKfW6SiuJ0e13eDYZoZV5wdrev7P3Nwg==}
     engines: {node: ^10.12.0 || >=12.0.0}
@@ -3921,6 +3968,10 @@ packages:
   /is-unicode-supported/0.1.0:
     resolution: {integrity: sha512-knxG2q4UC3u8stRGyAVJCOdxFmv5DZiRcdlIaAQXAbSfJya+OhopNotLQrstBhququ4ZpuKbDc/8S6mgXgPFPw==}
     engines: {node: '>=10'}
+    dev: false
+
+  /is_js/0.9.0:
+    resolution: {integrity: sha1-CrlFQFArp6+iTIVqqYVWFmnpxS0=}
     dev: false
 
   /isarray/0.0.1:
@@ -4540,6 +4591,10 @@ packages:
     resolution: {integrity: sha1-nbe1lJatPzz+8wp1FC0tkwrXJlE=}
     dev: false
 
+  /json-stringify-safe/5.0.1:
+    resolution: {integrity: sha1-Epai1Y/UXxmg9s4B1lcB4sc1tus=}
+    dev: false
+
   /json5/1.0.1:
     resolution: {integrity: sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==}
     hasBin: true
@@ -4644,6 +4699,10 @@ packages:
     hasBin: true
     dependencies:
       js-tokens: 4.0.0
+    dev: false
+
+  /lru-cache/2.2.4:
+    resolution: {integrity: sha1-bGWGGb7PFAMdDQtZSxYELOTcBj0=}
     dev: false
 
   /lru-cache/6.0.0:
@@ -5259,6 +5318,14 @@ packages:
       sisteransi: 1.0.5
     dev: false
 
+  /prop-types/15.8.1:
+    resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      react-is: 16.13.1
+    dev: false
+
   /proxy-addr/2.0.7:
     resolution: {integrity: sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==}
     engines: {node: '>= 0.10'}
@@ -5340,6 +5407,10 @@ packages:
       scheduler: 0.20.2
     dev: false
 
+  /react-is/16.13.1:
+    resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+    dev: false
+
   /react-is/17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
     dev: false
@@ -5415,6 +5486,12 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
+  /request-ip/2.0.2:
+    resolution: {integrity: sha1-3urm1K8hdoSX24zQX6NxQ/jxJX4=}
+    dependencies:
+      is_js: 0.9.0
+    dev: false
+
   /require-directory/2.1.1:
     resolution: {integrity: sha1-jGStX9MNqxyXbiNE/+f3kqam30I=}
     engines: {node: '>=0.10.0'}
@@ -5478,6 +5555,21 @@ packages:
     hasBin: true
     dependencies:
       glob: 7.2.0
+    dev: false
+
+  /rollbar/2.24.1:
+    resolution: {integrity: sha512-naoF7zF1rpKZyUTpWuCjqX/Ms0pGG3RkhxTEAQOtDIwSi1OgUv+yZCvq1/e/APgAvgr5NYAl2PtkRsIOxukMEg==}
+    dependencies:
+      async: 1.2.1
+      console-polyfill: 0.3.0
+      error-stack-parser: 2.0.7
+      json-stringify-safe: 5.0.1
+      lru-cache: 2.2.4
+      request-ip: 2.0.2
+      source-map: 0.5.7
+      uuid: 3.0.1
+    optionalDependencies:
+      decache: 3.1.0
     dev: false
 
   /rollup/2.70.1:
@@ -5736,6 +5828,10 @@ packages:
       escape-string-regexp: 2.0.0
     dev: false
 
+  /stackframe/1.2.1:
+    resolution: {integrity: sha512-h88QkzREN/hy8eRdyNhhsO7RSJ5oyTqxxmmn0dzBIMUclZsjpfmrsg81vp8mjjAs2vAZ72nyWxRUwSwmh0e4xg==}
+    dev: false
+
   /statuses/1.5.0:
     resolution: {integrity: sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=}
     engines: {node: '>= 0.6'}
@@ -5983,6 +6079,10 @@ packages:
     resolution: {integrity: sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=}
     dev: false
 
+  /tiny-invariant/1.2.0:
+    resolution: {integrity: sha512-1Uhn/aqw5C6RI4KejVeTg6mIS7IqxnLJ8Mv2tV5rTc0qWobay7pDUz6Wi392Cnc8ak1H0F2cjoRzb2/AW4+Fvg==}
+    dev: false
+
   /tmp/0.0.33:
     resolution: {integrity: sha512-jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw==}
     engines: {node: '>=0.6.0'}
@@ -6030,6 +6130,11 @@ packages:
     dependencies:
       punycode: 2.1.1
     dev: false
+
+  /traverse-chain/0.1.0:
+    resolution: {integrity: sha1-YdvC1Ttp/2CRoSoWj9fUMxB+QPE=}
+    dev: false
+    optional: true
 
   /tree-kill/1.2.2:
     resolution: {integrity: sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==}
@@ -6392,6 +6497,12 @@ packages:
   /utils-merge/1.0.1:
     resolution: {integrity: sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=}
     engines: {node: '>= 0.4.0'}
+    dev: false
+
+  /uuid/3.0.1:
+    resolution: {integrity: sha1-ZUS7ot/ajBzxfmKaOjBeK7H+5sE=}
+    deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+    hasBin: true
     dev: false
 
   /uuid/8.3.2:
@@ -6803,16 +6914,19 @@ packages:
     dev: false
 
   file:projects/client.tgz:
-    resolution: {integrity: sha512-/0rfzjNSGDGiFkwKGW9uxBqdnCNPSPHFLJR+FyJdLrg5HilMPewobvrFoIow7C3liwfc2HzRrklnrVV/AScjag==, tarball: file:projects/client.tgz}
+    resolution: {integrity: sha512-/pzpKjSD8N8cRibhxZrqdAUgKRBMGkq7XpdAzaS0bQchO9QGlN6cMBOdAPxjRusQzuXFFs/vngQX3ZBvitgDsQ==, tarball: file:projects/client.tgz}
     name: '@rush-temp/client'
     version: 0.0.0
     dependencies:
+      '@rollbar/react': 0.11.0_c4eb0ea19cbe8e1ccac4b2964e606e3c
       '@types/react': 17.0.41
       '@types/react-dom': 17.0.14
       '@vitejs/plugin-react': 1.2.0
       pino: 7.9.1
+      prop-types: 15.8.1
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
+      rollbar: 2.24.1
       typescript: 4.6.2
       vite: 2.8.6
       zod: 3.14.2
