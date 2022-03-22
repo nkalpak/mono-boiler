@@ -33,7 +33,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getHello: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        appGetHello: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -72,8 +72,8 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getHello(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getHello(options);
+        async appGetHello(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.appGetHello(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -91,8 +91,8 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getHello(options?: any): AxiosPromise<void> {
-            return localVarFp.getHello(options).then((request) => request(axios, basePath));
+        appGetHello(options?: any): AxiosPromise<string> {
+            return localVarFp.appGetHello(options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -110,8 +110,8 @@ export class DefaultApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public getHello(options?: AxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).getHello(options).then((request) => request(this.axios, this.basePath));
+    public appGetHello(options?: AxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).appGetHello(options).then((request) => request(this.axios, this.basePath));
     }
 }
 

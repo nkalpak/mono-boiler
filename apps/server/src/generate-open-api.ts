@@ -7,7 +7,19 @@ async function generateOpenApi() {
   const app = await NestFactory.create(AppModule);
 
   const config = new DocumentBuilder().setTitle('@replaceme').build();
-  const document = SwaggerModule.createDocument(app, config);
+  const document = SwaggerModule.createDocument(app, config, {
+    operationIdFactory: (controllerKey, operationId) => {
+      const controllerName = controllerKey
+        .toLowerCase()
+        .replace('controller', '');
+
+      function firstLetterToUppercase(word: string) {
+        return `${word[0].toUpperCase()}${word.slice(1)}`;
+      }
+
+      return [controllerName, firstLetterToUppercase(operationId)].join('');
+    },
+  });
   openApiGenerate(document);
 
   await app.close();

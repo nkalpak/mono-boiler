@@ -2,11 +2,11 @@
   "name": "@replaceme/api",
   "version": "0.0.1",
   "description": "",
-  "main": "dist/index.js",
+  "main": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "openapi-generate": "openapi-generator-cli generate -g typescript-axios -i ./node_modules/@replaceme/server/src/api/spec.json -o ./src --additional-properties=enumPropertyNaming=PascalCase",
-    "build": "yarn openapi-generate && tsc"
+    "build": "yarn openapi-generate"
   },
   "author": "",
   "license": "ISC",

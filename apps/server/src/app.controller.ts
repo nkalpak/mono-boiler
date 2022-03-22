@@ -1,12 +1,15 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
-import { ApiOperation } from '@nestjs/swagger';
+import { ApiOkResponse } from '@nestjs/swagger';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @ApiOperation({ operationId: 'getHello' })
+  @ApiOkResponse({
+    description: 'The result of calling "getHello"',
+    type: String,
+  })
   @Get()
   getHello(): string {
     return this.appService.getHello();

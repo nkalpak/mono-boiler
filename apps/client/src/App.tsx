@@ -1,9 +1,22 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import { api } from "./api";
 
 function App() {
   const [count, setCount] = useState(3);
+
+  React.useEffect(() => {
+    async function a() {
+      const fn = await api.appGetHello();
+      const response = await fn();
+
+      const data = response.data;
+      console.log(data);
+    }
+
+    a();
+  }, []);
 
   return (
     <div className="App">
