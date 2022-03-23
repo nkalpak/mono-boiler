@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@replaceme/client",
+      "comment": "john",
+      "type": "none"
+    }
+  ],
+  "packageName": "@replaceme/client"
+}
