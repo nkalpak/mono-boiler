@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@replaceme/api",
+      "comment": "Make typescript and node types versions match those in server",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@replaceme/api"
+}
