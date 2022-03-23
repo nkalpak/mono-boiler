@@ -392,20 +392,17 @@
     {
       "packageName": "@replaceme/server",
       "projectFolder": "apps/server",
-      "shouldPublish": true,
-      "versionPolicyName": "project"
+      "shouldPublish": true
     },
     {
       "packageName": "@replaceme/client",
       "projectFolder": "apps/client",
-      "shouldPublish": true,
-      "versionPolicyName": "project"
+      "shouldPublish": true
     },
     {
       "packageName": "@replaceme/api",
       "projectFolder": "lib/api",
-      "shouldPublish": true,
-      "versionPolicyName": "project"
+      "shouldPublish": true
     }
     // {
     //   /**
