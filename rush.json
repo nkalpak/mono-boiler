@@ -391,15 +391,18 @@
   "projects": [
     {
       "packageName": "@replaceme/server",
-      "projectFolder": "apps/server"
+      "projectFolder": "apps/server",
+      "shouldPublish": true
     },
     {
       "packageName": "@replaceme/client",
-      "projectFolder": "apps/client"
+      "projectFolder": "apps/client",
+      "shouldPublish": true
     },
     {
       "packageName": "@replaceme/api",
-      "projectFolder": "lib/api"
+      "projectFolder": "lib/api",
+      "shouldPublish": true
     }
     // {
     //   /**
