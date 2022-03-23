@@ -8,10 +8,10 @@ export class AppController {
 
   @ApiOkResponse({
     description: 'The result of calling "getHello"',
-    type: Number,
+    type: String,
   })
   @Get()
-  getHello(): number {
-    return this.appService.getHello().length;
+  getHello(): string {
+    return this.appService.getHello();
   }
 }
