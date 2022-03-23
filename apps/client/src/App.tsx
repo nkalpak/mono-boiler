@@ -1,10 +1,11 @@
 import React from "react";
 import "./App.css";
+import { Typography } from "./components/typography";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello!</h1>
+      <Typography variant="headline2">Hello!</Typography>
     </div>
   );
 }
