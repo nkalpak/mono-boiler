@@ -69,3 +69,6 @@ common/autoinstallers/*/.npmrc
 
 # Build output
 dist
+
+# Intellij
+.idea
