@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@replaceme/client",
+      "comment": "Add typography and modal components",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@replaceme/client"
+}
