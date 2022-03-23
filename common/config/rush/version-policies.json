@@ -99,4 +99,11 @@
   // 
   //   // "includeEmailInChangeFile": true
   // }
+  {
+    "policyName": "project",
+    "definitionName": "lockStepVersion",
+    "version": "0.1.0",
+    "nextBump": "minor",
+    "mainProject": "@replaceme/client"
+  }
 ]

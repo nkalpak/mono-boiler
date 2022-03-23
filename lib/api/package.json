@@ -1,6 +1,6 @@
 {
   "name": "@replaceme/api",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "",
   "main": "src/index.ts",
   "scripts": {
@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@replaceme/server": "^0.0.1",
+    "@replaceme/server": "^0.1.0",
     "@apidevtools/swagger-cli": "^4.0.4",
     "@openapitools/openapi-generator-cli": "^2.2.5",
     "@types/node": "^16.0.0",
